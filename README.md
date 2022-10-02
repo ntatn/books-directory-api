@@ -41,22 +41,22 @@ An API for online store book
   localhost:5000/api/v1/books/:id
 
 - Get All Categories : <br/>
-  localhost:5000/api/v1/categories
+  localhost:3000/api/v1/categories
 - Create Categories : <br/>
-  localhost:5000/api/v1/categories
+  localhost:3000/api/v1/categories
 - Update Categories : <br/>
-  localhost:5000/api/v1/categories/:id
+  localhost:3000/api/v1/categories/:id
 - Delete Categories : <br/>
-  localhost:5000/api/v1/categories/:id
+  localhost:3000/api/v1/categories/:id
 
 - Get All Users :<br/>
-  localhost:5000/api/v1/users
+  localhost:3000/api/v1/users
 - Create User :<br/>
-  localhost:5000/api/v1/users
+  localhost:3000/api/v1/users
 - Update User :<br/>
-  localhost:5000/api/v1/users/:id
+  localhost:3000/api/v1/users/:id
 - Delete User :<br/>
-  localhost:5000/api/v1/users/:id
+  localhost:3000/api/v1/users/:id
 
 - Get All Orders :<br/>
   localhost:5000/api/v1/orders
