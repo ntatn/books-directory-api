@@ -15,7 +15,7 @@ const getAllPersons = async (req, res, next) => {
 }
 const getSinglePerson = async (req, res, next) => {
     try {
-        const singlePerson = await person.findById(req.params.id).populate("books",)
+        const singlePerson = await person.findById(req.params.id).populate("books")
         res.status(200).json({
             status: 'ok',
             data: singlePerson

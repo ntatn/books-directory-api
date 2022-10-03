@@ -5,7 +5,8 @@ const getAllBooks = async (req, res, next) =>{
     try {
         const books = await book.find()
         res.status(200).json({
-            status: 'OK',
+            success: true,
+            count: books.length,
             data: books
         })
 
@@ -28,7 +29,7 @@ const addBook = async (req, res, next) =>{
 
         res.status(200).json({
             status: 'ok',
-            data: book
+            data: newBook
         })
     } catch (error) {
         res.status(500).json({
@@ -56,5 +57,35 @@ const getBook = async (req, res, next) =>{
         })
     }
 }
+const updateBook = async (req, res, next) =>{
+    try {
+        await book.findByIdAndUpdate(req.params.id, {$set: req.body})
+        res.status(200).json({
+            success: true,
+            message: "Book has been updated",
+        })
+    } catch (error) {
+        res.status(500).json({
+            error: {
+                message: error.message
+            }
+        })
+    }
+}
+const deleteBook = async (req, res, next) =>{
+    try {
+        await book.findByIdAndDelete(req.params.id)
+        res.status(201).json({
+            success: true,
+            data: {}
+        })
 
-export {getAllBooks, addBook, getBook}
+    } catch (error) {
+        res.status(404).json({
+            error: {
+                message: error.message
+            }
+        })
+    }
+}
+export {getAllBooks, addBook, getBook, deleteBook, updateBook}
