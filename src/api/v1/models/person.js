@@ -9,7 +9,7 @@ const personSchema = new Schema({
     year: {
         type: Number
     },
-    books: [{ type: Schema.Types.ObjectId, ref: "Book" }]
+    books: [{ type: Schema.Types.ObjectId, ref: "Book"}]
 })
 
 export default model("Person", personSchema)

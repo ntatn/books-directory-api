@@ -24,9 +24,7 @@ const addBook = async (req, res, next) =>{
     const authorId = req.body.author
     try {
         const newBook = await book.create({...req.body, author: authorId})
-        const findAuthor = person.findById(authorId)
-        await findAuthor.findOneAndUpdate({books: newBook._id})
-
+        await person.findByIdAndUpdate(authorId, {$push: {books: newBook._id} })
         res.status(200).json({
             status: 'ok',
             data: newBook

@@ -12,7 +12,7 @@ const bookSchema = new Schema({
     genres: { 
         type: [String] 
     },
-    author: { type: Schema.Types.ObjectId, ref:"Person" }
+    author: {type: Schema.Types.ObjectId}
 })
 
 export default model("Book", bookSchema)
