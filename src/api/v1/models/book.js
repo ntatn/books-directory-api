@@ -1,18 +1,30 @@
 import { Schema, model } from "mongoose"
 
 const bookSchema = new Schema({
-    title: {
+    title: { 
         type: String,
+        required: true,
+        minlength: 3
+    },
+    isPublished: { 
+        type: Boolean, 
         required: true
     },
-    published_date: {
+    page_count: { 
+        type: Number,
+        required: true,
+        min: 10
+    },
+    published_date: { 
         type: Date,
-        default: Date.now
+        default: Date.now(),
+        required: true
     },
-    genres: { 
-        type: [String] 
-    },
-    author: {type: Schema.Types.ObjectId}
+    author: {
+        type: String,
+        required: true,
+        minlength: 3
+    }
 })
 
 export default model("Book", bookSchema)

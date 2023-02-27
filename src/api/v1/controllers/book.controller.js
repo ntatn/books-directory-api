@@ -1,5 +1,5 @@
 import book from "../models/book.js"
-import person from "../models/person.js"
+
 
 const getAllBooks = async (req, res, next) =>{
     try {
@@ -21,10 +21,8 @@ const getAllBooks = async (req, res, next) =>{
 }
 
 const addBook = async (req, res, next) =>{
-    const authorId = req.body.author
     try {
-        const newBook = await book.create({...req.body, author: authorId})
-        await person.findByIdAndUpdate(authorId, {$push: {books: newBook._id} })
+        const newBook = await book.create(req.body)
         res.status(200).json({
             status: 'ok',
             data: newBook
