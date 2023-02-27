@@ -1,13 +1,11 @@
 # bookstore-api
 
-An API for online store book
+An API for  books directory
 
 ## Features:
 
-- Authentication
 - Books listing
-- Catagories listing
-- Order placements
+
 
 ## Technology Stack:
 
