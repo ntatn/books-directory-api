@@ -1,4 +1,4 @@
-# bookstore-api
+# books-directory-api
 
 An API for  books directory
 
